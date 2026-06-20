@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LiveNews24 | Bangladesh Breaking News</title>
+  <meta name="description" content="LiveNews24 is a dynamic Bangladesh-focused news portal with breaking headlines, politics, business, sports, culture, and live updates.">
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <div class="date-line">
+        <span id="todayDate">Saturday, June 20, 2026</span>
+        <span class="dot"></span>
+        <span id="liveClock">00:00</span>
+        <span class="dot"></span>
+        <span>Dhaka</span>
+      </div>
+      <div class="top-actions">
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+          <span class="icon-moon"></span>
+        </button>
+        <button class="subscribe-btn" type="button" data-open-newsletter>Subscribe</button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="masthead">
+    <div class="container masthead__inner">
+      <a class="brand" href="#" aria-label="LiveNews24 home">
+        <span class="brand__mark">LN</span>
+        <span>
+          <strong>LiveNews24</strong>
+          <small>Bangladesh in focus</small>
+        </span>
+      </a>
+      <button class="menu-btn" id="menuButton" type="button" aria-label="Open navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links" id="navLinks">
+        <button class="nav-link is-active" type="button" data-category="All">All</button>
+        <button class="nav-link" type="button" data-category="Politics">Politics</button>
+        <button class="nav-link" type="button" data-category="Business">Business</button>
+        <button class="nav-link" type="button" data-category="Bangladesh">Bangladesh</button>
+        <button class="nav-link" type="button" data-category="Sports">Sports</button>
+        <button class="nav-link" type="button" data-category="Culture">Culture</button>
+        <button class="nav-link" type="button" data-category="Tech">Tech</button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="breaking">
+      <div class="container breaking__inner">
+        <strong>Breaking</strong>
+        <div class="ticker" aria-live="polite">
+          <p id="tickerText">Loading latest updates...</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="hero">
+      <div class="container hero__grid">
+        <article class="lead-story" id="leadStory"></article>
+        <aside class="side-panel live-panel">
+          <div class="panel-heading">
+            <h2>Live Desk</h2>
+            <span class="pulse"></span>
+          </div>
+          <div class="live-list" id="liveList"></div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="tools-band">
+      <div class="container tools">
+        <label class="search-box" for="searchInput">
+          <span></span>
+          <input id="searchInput" type="search" placeholder="Search headlines, topics, places">
+        </label>
+        <div class="quick-stats">
+          <div>
+            <strong id="storyCount">0</strong>
+            <span>stories</span>
+          </div>
+          <div>
+            <strong id="bookmarkCount">0</strong>
+            <span>saved</span>
+          </div>
+          <div>
+            <strong>24/7</strong>
+            <span>updates</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="container content-grid">
+        <div>
+          <div class="section-heading">
+            <h2>Latest News</h2>
+            <p id="filterLabel">All sections</p>
+          </div>
+          <div class="news-grid" id="newsGrid"></div>
+          <div class="empty-state" id="emptyState" hidden>
+            <h3>No stories found</h3>
+            <p>Try another keyword or category.</p>
+          </div>
+          <button class="load-more" id="loadMore" type="button">Load more stories</button>
+        </div>
+
+        <aside class="rail">
+          <section class="side-panel">
+            <div class="panel-heading">
+              <h2>Trending</h2>
+            </div>
+            <ol class="trending-list" id="trendingList"></ol>
+          </section>
+
+          <section class="side-panel weather-card">
+            <div class="panel-heading">
+              <h2>Dhaka Snapshot</h2>
+            </div>
+            <div class="weather-main">
+              <strong>31 C</strong>
+              <span>Humid evening</span>
+            </div>
+            <div class="weather-row">
+              <span>Air quality</span>
+              <strong>Moderate</strong>
+            </div>
+            <div class="weather-row">
+              <span>River watch</span>
+              <strong>Stable</strong>
+            </div>
+          </section>
+
+          <section class="side-panel saved-panel">
+            <div class="panel-heading">
+              <h2>Saved Stories</h2>
+            </div>
+            <div id="savedList" class="saved-list"></div>
+          </section>
+        </aside>
+      </div>
+    </section>
+
+    <section class="opinion-band">
+      <div class="container opinion-grid">
+        <div>
+          <p class="eyebrow">Editorial View</p>
+          <h2>Independent reporting, local context, and clearer public conversation.</h2>
+        </div>
+        <article>
+          <h3>Why city services need data people can trust</h3>
+          <p>Readers deserve practical reporting that connects budget numbers, field conditions, and everyday public experience.</p>
+          <button type="button" data-open-opinion>Read opinion</button>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div>
+        <a class="brand brand--footer" href="#">
+          <span class="brand__mark">LN</span>
+          <span>
+            <strong>LiveNews24</strong>
+            <small>Bangladesh in focus</small>
+          </span>
+        </a>
+        <p>A complete demo news portal inspired by the structure of leading Bangladesh newspapers.</p>
+      </div>
+      <div>
+        <h3>Sections</h3>
+        <a href="#" data-category-link="Politics">Politics</a>
+        <a href="#" data-category-link="Business">Business</a>
+        <a href="#" data-category-link="Sports">Sports</a>
+      </div>
+      <div>
+        <h3>Newsroom</h3>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+        <a href="#">Advertise</a>
+      </div>
+      <div>
+        <h3>Follow</h3>
+        <a href="#">Facebook</a>
+        <a href="#">YouTube</a>
+        <a href="#">X</a>
+      </div>
+    </div>
+  </footer>
+
+  <dialog class="modal" id="articleModal">
+    <button class="modal__close" type="button" data-close-modal aria-label="Close article">Close</button>
+    <div id="modalContent"></div>
+  </dialog>
+
+  <dialog class="modal newsletter" id="newsletterModal">
+    <button class="modal__close" type="button" data-close-newsletter aria-label="Close newsletter">Close</button>
+    <form id="newsletterForm">
+      <p class="eyebrow">Morning Briefing</p>
+      <h2>Get the top Bangladesh stories in your inbox.</h2>
+      <input type="email" id="emailInput" placeholder="you@example.com" required>
+      <button class="subscribe-btn" type="submit">Join newsletter</button>
+      <p class="form-note" id="formNote">No spam. This demo stores nothing externally.</p>
+    </form>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
